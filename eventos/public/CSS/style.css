@@ -1,0 +1,45 @@
+
+
+.Unav li:hover{
+	background-color: gray;
+	transition: .5s;
+}
+#indexCenter img{
+height:70vh;
+width: 100%;
+}
+#indexCenter #title{
+position: absolute;
+ text-shadow: 2px 2px 2px black;"
+}
+.search{
+	border-radius: 25px;
+	background-color: rgba(255,255,255,.7);
+	margin: 18% 18%;
+	width: 60vw;
+	position: absolute;
+}
+
+
+@media (max-width: 800px){
+	#indexCenter img{
+height: 60vh;
+}
+.title{
+	font-size: 3em;
+}
+.search{
+	margin:30% 18%;
+}
+}
+@media (max-width: 400px){
+	#indexCenter img{
+height: 60vh;
+}
+.title{
+	font-size: 2em;
+}
+.search{
+	margin:70% 18%;
+}
+}
