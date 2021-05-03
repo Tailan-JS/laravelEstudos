@@ -41,11 +41,23 @@ class Navi extends Controller
     	}
 
     	$table->save();
-    	return redirect('/');
+    	return redirect('/')->with('msg','Evento criado com sucesso');
 
     }
     public function show($id){
     	$event = Event::findOrFail($id);
     	return view('details',['event'=>$event,'id'=>$id]);
+    }
+    public function destroy($id){
+        $event = Event::findOrFail($id)->delete();
+
+        return redirect('/events');
+
+    }
+
+    public function update(request $req){
+        $event = Event::findOrFail($req->id)->update($req->all());
+
+        return redirect('/events')->with('msg','Atualizãçãorealizada com sucesso');
     }
 }

@@ -9,7 +9,7 @@
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       	<!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="CSS/style.css">
+    <link rel="stylesheet" type="text/css" href="/CSS/style.css">
 </head>
 <body>
 	<header>
@@ -19,7 +19,7 @@
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="large material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down Unav">
         <li><a href="/">Home</a></li>
-        <li><a href="events">Eventos</a></li>
+        <li><a href="/events">Eventos</a></li>
         <li><a href="#">Login</a></li>
       </ul>
     </div>
@@ -32,10 +32,32 @@
   </ul>
 	</header>
 	@yield('content')
-
+<footer class="page-footer black">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5>Página Fake</h5>
+                <p class="grey-text text-lighten-4">Página deenvolvida com o objetivo de realizar estudos acerca do funcionamento de um framework de desenvolvimento web, todos os eventos aqui contidos são fictícios</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="https://github.com/Tailan-JS" target="blank" >Github</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Instagram</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2021 developed by Tailan-js
+            </div>
+          </div>
+        </footer>
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script type="text/javascript" src="Js/action.js"></script>
+    <script type="text/javascript" src="/Js/action.js"></script>
 </body>
 </html>
