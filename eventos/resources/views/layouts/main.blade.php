@@ -20,7 +20,16 @@
       <ul id="nav-mobile" class="right hide-on-med-and-down Unav">
         <li><a href="/">Home</a></li>
         <li><a href="/events">Eventos</a></li>
-        <li><a href="#">Login</a></li>
+        @guest
+        <li><a href="/login">Login</a></li>
+        @endguest
+        @auth
+         <li><a href="/dashboard">Meus Eventos</a></li>
+          <li><form action="/logout" method="POST">
+            @csrf
+            <a href="#" onclick="this.closest('form').submit();" >logout</a>
+          </form></li>
+        @endauth
       </ul>
     </div>
   </nav>

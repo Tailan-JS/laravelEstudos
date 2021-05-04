@@ -20,6 +20,4 @@ Route::post('/events/add',[Navi::class,'store']);
 Route::get('/events/{id}',[Navi::class,'show']);
 Route::delete('/events/{id}',[Navi::class,'destroy']);
 Route::put('/events/update/{id}',[Navi::class,'update']);
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::get('/dashboard',[Navi::class,'dashboard'])->middleware('auth');

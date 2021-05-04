@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Event;
+use App\Models\User;
 
 class Navi extends Controller
 {
@@ -29,6 +30,7 @@ class Navi extends Controller
     	$table->cidade = $request->city;
     	$table->description = $request->description;
     	$table->date = $request->date;
+        $table->owner = $request->owner;
 
     	//upload da imagem
     	if ($request->hasFile('image') && $request->file('image')->isValid()) {
@@ -40,6 +42,8 @@ class Navi extends Controller
 
     	}
 
+        $user = auth()->user();
+        $table->user_id = $user->id;
     	$table->save();
     	return redirect('/')->with('msg','Evento criado com sucesso');
 
@@ -59,5 +63,12 @@ class Navi extends Controller
         $event = Event::findOrFail($req->id)->update($req->all());
 
         return redirect('/events')->with('msg','Atualizãçãorealizada com sucesso');
+    }
+
+    public function dashboard(){
+
+        $user = auth()->user();
+        $events = $user->events;
+        return view('dashboard',['events'=> $events,'user'=>$user]);
     }
 }
