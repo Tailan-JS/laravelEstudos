@@ -3,7 +3,7 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            <img src="img/shirohige.png" style="width: 200px">
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
@@ -34,17 +34,19 @@
                 </label>
             </div>
 
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
+        
+                <div class="center">
+                <button class="btn green darken-1"> {{ __('Log in') }}</button>
+                <a class="btn green darken-1" href="/register">Register</a>
+            </div>
+          
+             @if (Route::has('password.request'))
+             <div class="right">
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}
                     </a>
+                </div>
                 @endif
-
-                <x-jet-button class="ml-4">
-                    {{ __('Log in') }}
-                </x-jet-button>
-            </div>
         </form>
     </x-jet-authentication-card>
 </x-guest-layout>

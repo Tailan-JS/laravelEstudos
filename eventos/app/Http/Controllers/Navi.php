@@ -71,4 +71,11 @@ class Navi extends Controller
         $events = $user->events;
         return view('dashboard',['events'=> $events,'user'=>$user]);
     }
+
+    public function joinEvent($id){
+        $user = auth()->user();
+        $user->event()->attach($id);
+
+        return redirect('/dashboard')->with('msg','presençaconfirmada no evento');
+    }
 }

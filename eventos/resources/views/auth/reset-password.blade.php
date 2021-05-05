@@ -1,6 +1,6 @@
 <x-guest-layout>
     <x-jet-authentication-card>
-        <x-slot name="logo">
+        <img src="img/shirohige.png" style="width: 200px">
             <x-jet-authentication-card-logo />
         </x-slot>
 
