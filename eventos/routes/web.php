@@ -22,3 +22,4 @@ Route::delete('/events/{id}',[Navi::class,'destroy'])->middleware('auth');
 Route::put('/events/update/{id}',[Navi::class,'update'])->middleware('auth');
 Route::get('/dashboard',[Navi::class,'dashboard'])->middleware('auth');
 Route::post('/join/{id}',[Navi::class,'joinEvent'])->middleware('auth');
+Route::delete('/leave/{id}',[Navi::class,'leaveEvent'])->middleware('auth');

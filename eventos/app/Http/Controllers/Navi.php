@@ -62,20 +62,36 @@ class Navi extends Controller
     public function update(request $req){
         $event = Event::findOrFail($req->id)->update($req->all());
 
-        return redirect('/events')->with('msg','Atualizãçãorealizada com sucesso');
+        return redirect('/events')->with('msg','Atualização realizada com sucesso');
     }
 
     public function dashboard(){
-
         $user = auth()->user();
         $events = $user->events;
-        return view('dashboard',['events'=> $events,'user'=>$user]);
+        $eventsP = $user->event;
+        return view('dashboard',['events'=> $events,'user'=>$user,'eventsAsParticipant' => $eventsP]);
     }
 
     public function joinEvent($id){
         $user = auth()->user();
-        $user->event()->attach($id);
+        $registred = $user->event;
+        $control = false;
+        foreach ($registred as $reg) {
+            if($reg->id == $id)
+                $control = true;
 
+        }
+        
+        if($control== false)
+        $user->event()->attach($id);
+      return redirect('/dashboard')->with('msg','presençaconfirmada no evento');
+    }
+
+    public function leaveEvent($id){
+         $user = auth()->user();
+
+        $user->event()->detach($id);
         return redirect('/dashboard')->with('msg','presençaconfirmada no evento');
+
     }
 }

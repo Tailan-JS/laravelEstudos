@@ -3,13 +3,41 @@
 <main>
 <div class="card row">
     <div class="card col l10 push-l1">
+      <p class="card-title center">Eventos em marquei presença</p>
+       <!---- participant --->
+     <div class="card col l8 push-l2">
+       <table class="container ">
+        <thead>
+         <th>num</th>
+         <th>nome</th>
+         <th></th>
+       </thead>
+       <tbody>
+        @foreach($eventsAsParticipant as $eventsP)
+        <tr>
+         <td>{{$loop->index +1 }}</td>
+         <td>{{$eventsP->name}}</td>
+         <td style="width: 10%;">
+          <form action="/leave/{{$eventsP->id}}" method="POST">
+            @method('DELETE')
+            @csrf
+            <button type="submit" class="btn red">Sair</button>
+          </form></td>
+       </tr>
+       @endforeach
+       </tbody>
+       </table>
+     </div>
+
+
     <h4 class="center col l12">Meus Eventos</h4>
     <!--   Tabela de Eventos-->
-    <table>
+    <table class="highlight">
         <thead>
             <tr>
                 <th style="width: 5%;">id</th>
                 <th style="width: 50%;">Nome</th>
+                <th style="width: 10%; ">n Participantes </th>
                 <th style="width: 5%;">actions</th>
                 <th style="width: 5%;"></th>
             </tr>
@@ -19,6 +47,7 @@
             <tr>
                 <td>{{$loop->index + 1}}</td>
                 <td>{{$event->name}}</td>
+                <td>{{count($event->users)}}</td>
                 <!--- função de edição ------>
                 <td>        <a href="#modal1" class=" orange btn right modal-trigger"><i class="material-icons prefix">edit</i> </a>
 
