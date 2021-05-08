@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="row container">
-	<div class="card col l12" style="padding:0px;">
-	<div class="medium card left col l5 m7 s12">
+	<div class="card col l12" style="padding:0px;margin-top: 25px;">
+	<div class=" card left col l5 m7 s12 imgDetail">
 		<img src="/img/events/{{$event->img}}" style="width: 100%; height: 100%;">
 	</div>
 	<div class="card info col l7 m5 s12 medium center">

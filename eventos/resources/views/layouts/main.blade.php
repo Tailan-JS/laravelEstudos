@@ -35,9 +35,18 @@
   </nav>
 
    <ul class="sidenav black Unav" id="mobile-demo">
-    <li ><a href="#" class=" white-text">Home</a></li>
-    <li><a href="#" class=" white-text">Eventos</a></li>
-    <li><a href="#" class=" white-text">Login</a></li>
+    <li ><a href="/" class=" white-text">Home</a></li>
+    <li><a href="/events" class=" white-text">Eventos</a></li>
+    @auth
+       <li><a href="/dashboard" class="white-text">Meus Eventos</a></li>
+     <li><form action="/logout" method="POST">
+            @csrf
+            <a href="#" class="white-text" style="padding-left: 40px;" onclick="this.closest('form').submit();" >logout</a>
+          </form></li>
+          @endauth
+    @guest
+    <li><a href="/login" class=" white-text">Login</a></li>
+    @endguest
   </ul>
 	</header>
 	@yield('content')

@@ -25,6 +25,9 @@ position: absolute;
 	width: 60vw;
 	position: absolute;
 }
+.imgDetail{
+	height: 400px;
+}
 
 
 @media (max-width: 800px){
@@ -47,5 +50,8 @@ height: 60vh;
 }
 .search{
 	margin:70% 18%;
+}
+.imgDetail{
+	height: 250px;
 }
 }
