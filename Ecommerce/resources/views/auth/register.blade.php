@@ -43,7 +43,7 @@
                 </div>
             @endif
 
-            <div class="flex items-center justify-end mt-4">
+            <div class="col l6 push-l6">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
                     {{ __('Already registered?') }}
                 </a>
@@ -56,8 +56,5 @@
 </div>
 
 
-<x-guest-layout>
-   
-</x-guest-layout>
 
 @endsection

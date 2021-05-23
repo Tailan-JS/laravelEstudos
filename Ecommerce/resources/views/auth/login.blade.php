@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
 <div class="row">
-    <div class="card col l6 push-l3" style="padding: 10px; margin: 5px;">
+    <div class="card col l6 push-l3" style="padding: 10px; margin: 25px;">
         <h4 class="card-title center">Dados de Login</h4>
         <form method="POST" action="{{route('login')}}" >
             @csrf

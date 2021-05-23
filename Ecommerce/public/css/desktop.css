@@ -24,3 +24,27 @@
   	background-image: url('../img/business.jpg');
   	background-size: 100% 100%;
   }
+  #aside {
+    margin: 0px;
+    min-height: 60vh;
+    text-align: center;
+  }
+  #aside img{
+    border-radius: 100px;
+    width: 12vw;
+    margin: 10px;
+  }
+  .cardCartBtn{
+    width: 5em;
+    height: 2.8em;
+   border-radius: 12%;
+ }
+ .qtd {
+  padding: 0px;
+  line-height: -40px;
+  margin-top: -12px;
+  border:.1px solid #999999;
+  margin: 0px;
+  height: 40px;
+  border-radius: 25px;
+  }

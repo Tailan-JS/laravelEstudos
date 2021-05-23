@@ -16,7 +16,8 @@ use App\Http\Controllers\Navi;
 
 
 Route::get('/',[Navi::class,'index']);
+Route::get('/products',[Navi::class,'products']);
+Route::get('/dashboard',[Navi::class,'dashboard'])->middleware('auth');
+Route::post('/products/add',[Navi::class,'store'])->middleware('auth');
+Route::get('/details/{id}',[Navi::class,'details']);
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
